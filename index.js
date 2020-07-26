@@ -14,11 +14,11 @@ require('./config/database')
 
 
 // corre de lunes a viernes, 9:00 AM - 10:00 PM en el minuto 5
-// let job = new CronJob('00 23 9-18 * * 1-5 ', asignarCitas)
-// job.start()
+let job = new CronJob('00 23 9-18 * * 1-5 ', asignarCitas)
+job.start()
 
-// let job1 = new CronJob('00 00 23 * * 1-5', nadieDisponible)
-// job1.start()
+let job1 = new CronJob('00 00 23 * * 1-5', nadieDisponible)
+job1.start()
 
 
 // const Appointment = require('./models/appointments')
