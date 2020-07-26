@@ -1,6 +1,6 @@
 import { decode } from 'jsonwebtoken'
 export const isAuthenticated = ()=>{
-    const token = localStorage.getItem('jwt')
+    const token = sessionStorage.getItem('jwt')
 
     try {
         decode(token)

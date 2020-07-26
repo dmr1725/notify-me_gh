@@ -3,6 +3,8 @@ import {SIGN_IN, APPOINTMENTS_ASSIGNED_QTY, APPOINTMENTS_GIVEN_QTY, SALES_QTY, R
 import axios from 'axios'
 const url = 'http://localhost:5000/api/user'
 
+
+
 export const sign_in = (email, password)=>{
 
     // console.log(email)
@@ -16,7 +18,7 @@ export const sign_in = (email, password)=>{
 
         // console.log(response.data.token)
         if(response.data.token){
-            localStorage.setItem('jwt', response.data.token)
+            sessionStorage.setItem('jwt', response.data.token)
         }
         
         dispatch({type: SIGN_IN, payload: response.data})
@@ -26,7 +28,8 @@ export const sign_in = (email, password)=>{
 }
 
 export const appointments_assigned_qty = ()=>{
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
 
     return async (dispatch)=>{
         
@@ -45,7 +48,8 @@ export const appointments_assigned_qty = ()=>{
 }
 
 export const appointments_given_qty = ()=>{
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
 
     return async (dispatch)=>{
         
@@ -64,7 +68,8 @@ export const appointments_given_qty = ()=>{
 }
 
 export const sales_quantity = ()=>{
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
 
     return async (dispatch)=>{
         
@@ -83,7 +88,8 @@ export const sales_quantity = ()=>{
 }
 
 export const recent_sales = ()=>{
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
 
     return async (dispatch)=>{
         
@@ -102,7 +108,8 @@ export const recent_sales = ()=>{
 }
 
 export const check_available = ()=>{
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
 
     return async (dispatch)=>{
         
@@ -121,7 +128,8 @@ export const check_available = ()=>{
 }
 
 export const today = ()=>{
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
 
     return async (dispatch)=>{
         
@@ -140,7 +148,8 @@ export const today = ()=>{
 }
 
 export const demo_given = (id, client_id)=>{
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
 
     return async (dispatch)=>{
         
@@ -164,7 +173,8 @@ export const demo_given = (id, client_id)=>{
 }
 
 export const completed = ()=>{
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
 
     return async (dispatch)=>{
         
@@ -185,7 +195,8 @@ export const completed = ()=>{
 
 export const make_sale = (id, pid, date)=>{
     console.log(id, pid, date)
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
     
     // este inner function redux-thunk la llama automaticamente
     return async (dispatch)=>{
@@ -215,7 +226,8 @@ export const make_sale = (id, pid, date)=>{
 export const re_schedule = (id, date, hour)=>{
     
 
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
 
     return async (dispatch)=>{
         
@@ -237,7 +249,8 @@ export const re_schedule = (id, date, hour)=>{
 }
 
 export const incomplete = ()=>{
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
 
     return async (dispatch)=>{
         
@@ -256,7 +269,8 @@ export const incomplete = ()=>{
 }
 
 export const allSales = ()=>{
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
 
     return async (dispatch)=>{
         
@@ -276,7 +290,8 @@ export const allSales = ()=>{
 
 
 export const delete_sale = (id)=>{
-    const token = localStorage.getItem('jwt')
+   
+    const token = sessionStorage.getItem('jwt')
 
     return async (dispatch)=>{
         
